@@ -1,4 +1,5 @@
 import 'package:clap_app/pages/common_widgets/background_widget.dart';
+import 'package:clap_app/pages/splash/spash_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const BackgroundWidget(),
+      home: const SplashScreen(),
     );
   }
 }
