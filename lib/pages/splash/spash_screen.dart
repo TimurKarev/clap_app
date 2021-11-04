@@ -1,4 +1,5 @@
 import 'package:clap_app/pages/common_widgets/background_widget.dart';
+import 'package:clap_app/pages/onboarding/on_board_page.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -41,9 +42,9 @@ class SplashScreen extends StatelessWidget {
   }
 
   void _forwardToBoard(BuildContext context) async {
-    await Future.delayed(Duration(seconds: 3), () {
+    await Future.delayed(const Duration(seconds: 3), () {
       // 5 seconds over, navigate to Page2.
-      Navigator.push(context, MaterialPageRoute(builder: (_) => BackgroundWidget()));
+      Navigator.push(context, MaterialPageRoute(builder: (_) => OnBoardPage()));
     });
   }
 }

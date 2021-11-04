@@ -14,6 +14,12 @@ abstract class Styles {
     color: brightTextColor,
   );
 
+  static TextStyle buttonText = GoogleFonts.quicksand(
+    fontSize: 17,
+    fontWeight: FontWeight.bold,
+    color: blackTextColor,
+  );
+
   static const brightTextColor = CupertinoColors.white;
 
   static const blackTextColor = CupertinoColors.black;

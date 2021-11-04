@@ -1,4 +1,7 @@
+import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
+import '../styles.dart';
+import 'widgets/on_board_template.dart';
 import 'widgets/onboard_text_widget.dart';
 
 class OnBoardPage extends StatefulWidget {
@@ -128,8 +131,8 @@ class _OnBoardPageState extends State<OnBoardPage> {
                       dotsCount: 4,
                       position: _currentPage,
                       decorator: const DotsDecorator(
-                        color: Styles.buttonDisableColor, // Inactive color
-                        activeColor: Styles.buttonColor,
+                        color: Styles.brightTextColor,
+                        activeColor: Styles.primaryColor,
                       ),
                     ),
                   ),
