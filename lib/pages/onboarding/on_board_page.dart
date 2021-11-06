@@ -15,11 +15,11 @@ class _OnBoardPageState extends State<OnBoardPage> {
 
 
   static const List<String> _imagePath = [
-    "assets/images/clap_phone.svg",
-    "assets/images/clapping.svg",
-    "assets/images/phone_with_icon.svg",
     "assets/images/problem.svg",
     "assets/images/rate.svg",
+    "assets/images/clapping.svg",
+    "assets/images/phone_with_icon.svg",
+    "assets/images/clap_phone.svg",
   ];
 
   static const List<String> _titles = [
@@ -43,6 +43,7 @@ class _OnBoardPageState extends State<OnBoardPage> {
     OnBoardTextWidget(header: _titles[1], text: _text[1]),
     OnBoardTextWidget(header: _titles[2], text: _text[2]),
     OnBoardTextWidget(header: _titles[3], text: _text[3]),
+    OnBoardTextWidget(header: _titles[4], text: _text[4]),
   ];
 
   final Curve curve = Curves.easeInOut;
@@ -68,7 +69,7 @@ class _OnBoardPageState extends State<OnBoardPage> {
               OnBoardTemplate(
                 imagePath: _imagePath[0],
                 textOrButton: _widgets[0],
-                buttonText: "Next",
+                buttonText: "Continue",
                 onPressed: () {
                   controller.nextPage(duration: duration, curve: curve);
                 },
@@ -76,7 +77,7 @@ class _OnBoardPageState extends State<OnBoardPage> {
               OnBoardTemplate(
                 imagePath: _imagePath[1],
                 textOrButton: _widgets[1],
-                buttonText: "Next",
+                buttonText: "Continue",
                 onPressed: () {
                   controller.nextPage(duration: duration, curve: curve);
                 },
@@ -84,7 +85,7 @@ class _OnBoardPageState extends State<OnBoardPage> {
               OnBoardTemplate(
                 imagePath: _imagePath[2],
                 textOrButton: _widgets[2],
-                buttonText: "Next",
+                buttonText: "Continue",
                 isTappable: true,
                 onPressed: () {
                   controller.nextPage(duration: duration, curve: curve);
@@ -93,6 +94,15 @@ class _OnBoardPageState extends State<OnBoardPage> {
               OnBoardTemplate(
                 imagePath: _imagePath[3],
                 textOrButton: _widgets[3],
+                buttonText: "Continue",
+                legalWidget: true,
+                onPressed: () {
+                  controller.nextPage(duration: duration, curve: curve);
+                },
+              ),
+              OnBoardTemplate(
+                imagePath: _imagePath[4],
+                textOrButton: _widgets[4],
                 buttonText: "Continue",
                 legalWidget: true,
                 onPressed: () {

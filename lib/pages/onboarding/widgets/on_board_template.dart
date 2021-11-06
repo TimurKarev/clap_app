@@ -1,6 +1,8 @@
 
+import 'package:clap_app/pages/common_widgets/background_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:rating_dialog/rating_dialog.dart';
 
 
@@ -27,56 +29,58 @@ class OnBoardTemplate extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Styles.brightTextColor,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Flexible(
-              flex: 1,
-              child: Container(),
-            ),
-            Flexible(
-              flex: 3,
-              child: Image.asset(imagePath),
-            ),
-            Flexible(
-              flex: 2,
-              child: GestureDetector(
-                child: Center(child: textOrButton),
-                onTap: () {
-                  _showRatingAppDialog(context);
-                },
+    return Stack(
+      children: [
+        const BackgroundWidget(),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Flexible(
+                flex: 1,
+                child: Container(),
               ),
-            ),
-            Flexible(
-              flex: 1,
-              child: Container(),
-            ),
-            Flexible(
-              flex: 1,
-              child: CupertinoButton(
-                padding: EdgeInsets.zero,
-                color: Styles.primaryColor,
-                //disabledColor: Styles.buttonDisableColor,
-                child: Text(
-                  buttonText,
-                  style: Styles.buttonText,
+              Flexible(
+                flex: 3,
+                child: SvgPicture.asset(imagePath),
+              ),
+              Flexible(
+                flex: 2,
+                child: GestureDetector(
+                  child: Center(child: textOrButton),
+                  onTap: () {
+                    _showRatingAppDialog(context);
+                  },
                 ),
-                onPressed: () {
-                  onPressed();
-                },
               ),
-            ),
-            Flexible(
-              flex: 1,
-              child: legalWidget ? const LegalWidget() : Container(),
-            ),
-          ],
+              Flexible(
+                flex: 1,
+                child: Container(),
+              ),
+              Flexible(
+                flex: 1,
+                child: CupertinoButton(
+                  padding: EdgeInsets.zero,
+                  color: Styles.primaryColor,
+                  //disabledColor: Styles.buttonDisableColor,
+                  child: Text(
+                    buttonText,
+                    style: Styles.buttonText,
+                  ),
+                  onPressed: () {
+                    onPressed();
+                  },
+                ),
+              ),
+              Flexible(
+                flex: 1,
+                child: legalWidget ? const LegalWidget() : Container(),
+              ),
+            ],
+          ),
         ),
-      ),
+      ],
     );
   }
 

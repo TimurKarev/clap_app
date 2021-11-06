@@ -10,7 +10,7 @@ abstract class Styles {
 
   static TextStyle subtitleText = GoogleFonts.quicksand(
     fontSize: 17,
-    fontWeight: FontWeight.bold,
+    fontWeight: FontWeight.w500,
     color: brightTextColor,
   );
 
