@@ -1,5 +1,5 @@
-import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../styles.dart';
 import 'widgets/on_board_template.dart';
 import 'widgets/onboard_text_widget.dart';
@@ -7,13 +7,12 @@ import 'widgets/onboard_text_widget.dart';
 class OnBoardPage extends StatefulWidget {
   OnBoardPage({Key? key}) : super(key: key);
   final PageController controller = PageController(initialPage: 0);
+
   @override
   _OnBoardPageState createState() => _OnBoardPageState();
 }
 
 class _OnBoardPageState extends State<OnBoardPage> {
-
-
   static const List<String> _imagePath = [
     "assets/images/problem.svg",
     "assets/images/rate.svg",
@@ -50,7 +49,6 @@ class _OnBoardPageState extends State<OnBoardPage> {
   final Duration duration = const Duration(milliseconds: 400);
   double _currentPage = 0;
 
-
   @override
   Widget build(BuildContext context) {
     final controller = widget.controller;
@@ -64,7 +62,7 @@ class _OnBoardPageState extends State<OnBoardPage> {
               setState(() {
                 _currentPage = controller.page ?? 0;
               });
-            } ,
+            },
             children: [
               OnBoardTemplate(
                 imagePath: _imagePath[0],
@@ -120,6 +118,25 @@ class _OnBoardPageState extends State<OnBoardPage> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Flexible(
+                flex: 2,
+                child: Align(
+                  alignment: Alignment.center,
+                  child: Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: SmoothPageIndicator(
+                      count: 5,
+                      controller: widget.controller,
+                      effect: const ColorTransitionEffect(
+                          dotWidth: 55.0,
+                          dotHeight: 4.0,
+                          radius: 0.0,
+                          dotColor: Styles.inactiveDotColor,
+                          activeDotColor: Styles.activeDotColor,),
+                    ),
+                  ),
+                ),
+              ),
+              Flexible(
                 flex: 1,
                 child: Container(),
               ),
@@ -129,27 +146,6 @@ class _OnBoardPageState extends State<OnBoardPage> {
               ),
               Flexible(
                 flex: 2,
-                child: Container(),
-              ),
-              Flexible(
-                flex: 1,
-                child: Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: DotsIndicator(
-                      dotsCount: 4,
-                      position: _currentPage,
-                      decorator: const DotsDecorator(
-                        color: Styles.brightTextColor,
-                        activeColor: Styles.primaryColor,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              Flexible(
-                flex: 1,
                 child: Container(),
               ),
               Flexible(

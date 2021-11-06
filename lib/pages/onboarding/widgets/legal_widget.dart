@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:url_launcher/link.dart';
 
@@ -11,58 +10,59 @@ class LegalWidget extends StatelessWidget {
   static const String termsOfUse = "";
   static const String restorePurchases = "";
 
+  static TextStyle textStyle =  Styles.legacyText;
+
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Link(
-                uri: Uri.parse(privacyPolicy),
-                builder:
-                    (BuildContext context, Future<void> Function()? followLink) =>
+          Link(
+            uri: Uri.parse(privacyPolicy),
+            builder:
+                (BuildContext context, Future<void> Function()? followLink) =>
                     GestureDetector(
-                      onTap: followLink,
-                      child: Text(
-                        "Privacy Policy",
-                        style: Styles.subtitleText,
-                      ),
-                    ),
+              onTap: followLink,
+              child: Text(
+                "Privacy Policy",
+                style: textStyle,
               ),
-              Text(
-                "  |  ",
-                style: Styles.subtitleText,
-                textAlign: TextAlign.start,
-              ),
-              Link(
-                uri: Uri.parse(termsOfUse),
-                builder:
-                    (BuildContext context, Future<void> Function()? followLink) =>
-                    GestureDetector(
-                      onTap: followLink,
-                      child: Text(
-                        "Terms of Use",
-                        style: Styles.subtitleText,
-                      ),
-                    ),
-              ),
-            ],
+            ),
           ),
-          const SizedBox(height: 10.0,),
+          Text(
+            "  |  ",
+            style: textStyle,
+            textAlign: TextAlign.start,
+          ),
+          Link(
+            uri: Uri.parse(termsOfUse),
+            builder:
+                (BuildContext context, Future<void> Function()? followLink) =>
+                    GestureDetector(
+              onTap: followLink,
+              child: Text(
+                "Terms of Use",
+                style: textStyle,
+              ),
+            ),
+          ),
+          Text(
+            "  |  ",
+            style: textStyle,
+            textAlign: TextAlign.start,
+          ),
           Link(
             uri: Uri.parse(restorePurchases),
             builder:
                 (BuildContext context, Future<void> Function()? followLink) =>
-                GestureDetector(
-                  onTap: followLink,
-                  child: Text(
-                    "Restore purchases",
-                    style: Styles.subtitleText,
-                  ),
-                ),
+                    GestureDetector(
+              onTap: followLink,
+              child: Text(
+                "Restore purchases",
+                style: textStyle,
+              ),
+            ),
           ),
         ],
       ),

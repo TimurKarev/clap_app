@@ -24,7 +24,7 @@ class OnBoardTemplate extends StatelessWidget {
     this.isTappable = false,
     required this.onPressed,
     required this.buttonText,
-    this.legalWidget = false,
+    this.legalWidget = true,
   }) : super(key: key);
 
   @override
@@ -38,7 +38,7 @@ class OnBoardTemplate extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Flexible(
-                flex: 1,
+                flex: 2,
                 child: Container(),
               ),
               Flexible(
@@ -53,10 +53,6 @@ class OnBoardTemplate extends StatelessWidget {
                     _showRatingAppDialog(context);
                   },
                 ),
-              ),
-              Flexible(
-                flex: 1,
-                child: Container(),
               ),
               Flexible(
                 flex: 1,

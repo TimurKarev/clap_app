@@ -14,21 +14,24 @@ class OnBoardTextWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
-      Center(
-        child: Text(
-          header,
-          style: Styles.titleText,
-        ),
-      ),
-      const SizedBox(height: 20.0),
-      Center(
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Center(
           child: Text(
-        text,
-        style: Styles.subtitleText,
-        textAlign: TextAlign.center,
-        //overflow: TextOverflow.ellipsis,
-      )),
-    ]);
+            header,
+            style: Styles.titleText,
+          ),
+        ),
+        const SizedBox(height: 10.0),
+        Center(
+            child: Text(
+          text,
+          style: Styles.subtitleText,
+          textAlign: TextAlign.center,
+          //overflow: TextOverflow.ellipsis,
+        )),
+      ],
+    );
   }
 }

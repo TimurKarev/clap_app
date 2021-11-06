@@ -20,6 +20,12 @@ abstract class Styles {
     color: blackTextColor,
   );
 
+  static TextStyle legacyText = GoogleFonts.quicksand(
+    fontSize: 13,
+    fontWeight: FontWeight.normal,
+    color: brightTextColor,
+  );
+
   static const brightTextColor = CupertinoColors.white;
 
   static const blackTextColor = CupertinoColors.black;
@@ -29,4 +35,8 @@ abstract class Styles {
   static const secondaryColor = Color(0xff4D7EF0);
 
   static const thirdColor = Color(0xffF9F871);
+
+  static const activeDotColor = CupertinoColors.white;
+
+  static const inactiveDotColor = Color.fromARGB(122, 255, 255, 255);
 }
