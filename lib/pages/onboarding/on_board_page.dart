@@ -39,7 +39,7 @@ class _OnBoardPageState extends State<OnBoardPage> {
 
   static final List<Widget> _widgets = [
     OnBoardTextWidget(header: _titles[0], text: _text[0]),
-    OnBoardTextWidget(header: _titles[1], text: _text[1]),
+    OnBoardTextWidget(header: _titles[1], text: _text[1], tapable: true),
     OnBoardTextWidget(header: _titles[2], text: _text[2]),
     OnBoardTextWidget(header: _titles[3], text: _text[3]),
     OnBoardTextWidget(header: _titles[4], text: _text[4]),
@@ -127,11 +127,12 @@ class _OnBoardPageState extends State<OnBoardPage> {
                       count: 5,
                       controller: widget.controller,
                       effect: const ColorTransitionEffect(
-                          dotWidth: 55.0,
-                          dotHeight: 4.0,
-                          radius: 0.0,
-                          dotColor: Styles.inactiveDotColor,
-                          activeDotColor: Styles.activeDotColor,),
+                        dotWidth: 55.0,
+                        dotHeight: 4.0,
+                        radius: 0.0,
+                        dotColor: Styles.inactiveDotColor,
+                        activeDotColor: Styles.activeDotColor,
+                      ),
                     ),
                   ),
                 ),
