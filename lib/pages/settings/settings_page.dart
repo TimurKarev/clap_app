@@ -1,8 +1,8 @@
 import 'package:clap_app/pages/common_widgets/background_widget.dart';
 import 'package:clap_app/pages/common_widgets/text_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_ringtone_player/flutter_ringtone_player.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:ringtone_player/ringtone_player.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({Key? key}) : super(key: key);
@@ -14,8 +14,10 @@ class SettingsPage extends StatefulWidget {
 class _SettingsPageState extends State<SettingsPage> {
   @override
   Widget build(BuildContext context) {
-    FlutterRingtonePlayer.playNotification();
+    RingtonePlayer.ringtone();
+    print("Try to play");
     return Scaffold(
+      // body: Center(child: Text("Hello")),
       body: Stack(
         children: [
           const BackgroundWidget(),

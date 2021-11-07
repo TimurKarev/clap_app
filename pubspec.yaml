@@ -32,7 +32,7 @@ dependencies:
   rating_dialog: ^2.0.3
   url_launcher: ^6.0.12
   smooth_page_indicator: ^1.0.0+2
-  flutter_ringtone_player: ^3.1.0
+  ringtone_player: ^0.1.1
   get: ^4.3.8
   get_storage: ^2.0.3
   flutter:

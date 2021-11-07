@@ -1,4 +1,5 @@
 import 'package:clap_app/pages/common_widgets/background_widget.dart';
+import 'package:clap_app/pages/settings/settings_page.dart';
 import 'package:clap_app/pages/splash/spash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const SplashScreen(),
+      home: const SettingsPage(),
     );
   }
 }

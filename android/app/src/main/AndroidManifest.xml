@@ -1,5 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.clap_app">
+
+   <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
    <application
         android:label="clap_app"
         android:icon="@mipmap/ic_launcher">
