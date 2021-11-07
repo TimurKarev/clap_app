@@ -1,16 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:rating_dialog/rating_dialog.dart';
 
-import '../../styles.dart';
+import '../styles.dart';
 
-class OnBoardTextWidget extends StatelessWidget {
+class TextWidget extends StatelessWidget {
   final String header;
   final String text;
   final bool tapable;
 
-  const OnBoardTextWidget({
+  const TextWidget({
     Key? key,
     required this.header,
     required this.text,

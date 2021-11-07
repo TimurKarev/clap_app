@@ -1,8 +1,10 @@
+import 'package:clap_app/pages/settings/settings_page.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../styles.dart';
 import 'widgets/on_board_template.dart';
-import 'widgets/onboard_text_widget.dart';
+import '../common_widgets/text_widget.dart';
 
 class OnBoardPage extends StatefulWidget {
   OnBoardPage({Key? key}) : super(key: key);
@@ -38,11 +40,11 @@ class _OnBoardPageState extends State<OnBoardPage> {
   ];
 
   static final List<Widget> _widgets = [
-    OnBoardTextWidget(header: _titles[0], text: _text[0]),
-    OnBoardTextWidget(header: _titles[1], text: _text[1], tapable: true),
-    OnBoardTextWidget(header: _titles[2], text: _text[2]),
-    OnBoardTextWidget(header: _titles[3], text: _text[3]),
-    OnBoardTextWidget(header: _titles[4], text: _text[4]),
+    TextWidget(header: _titles[0], text: _text[0]),
+    TextWidget(header: _titles[1], text: _text[1], tapable: true),
+    TextWidget(header: _titles[2], text: _text[2]),
+    TextWidget(header: _titles[3], text: _text[3]),
+    TextWidget(header: _titles[4], text: _text[4]),
   ];
 
   final Curve curve = Curves.easeInOut;
@@ -110,6 +112,7 @@ class _OnBoardPageState extends State<OnBoardPage> {
                   //         //TODO: Fix landing logic HomeFullPage - is not the best solution
                   //         const HomeFullPage()),
                   //         (Route<dynamic> route) => false);
+                  Get.off(const SettingsPage());
                 },
               ),
             ],
